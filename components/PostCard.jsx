@@ -1,3 +1,8 @@
+/**
+ * Created by Anoohya Nalla on 2023-07-05.
+ * Original code authored by Anoohya Nalla.
+ */
+
 import React, { useState, useEffect } from "react";
 import { View, Text, Image } from "react-native";
 import moment from "moment";
@@ -40,19 +45,33 @@ const PostCard = ({ post }) => {
   return (
     <>
       <View
-        style={{ marginTop: 10, padding: 10, borderWidth: 1, borderRadius: 5 }}
+        style={{
+          marginTop: 10,
+          padding: 10,
+          borderWidth: 1,
+          borderRadius: 5,
+          borderColor: "#7C4E29",
+        }}
       >
+        <View
+          style={{
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {imageSource && (
+            <Image
+              source={{ uri: imageSource }}
+              style={{ width: 200, height: 200, marginBottom: 20 }}
+            />
+          )}
+        </View>
         <Text style={{ fontSize: 16, fontWeight: "bold" }}>{title}</Text>
-        <Text>{description}</Text>
+        {description ? <Text>{description}</Text> : null}
         {expiryTime != null && remainingTime ? (
           <Text style={{ marginTop: 5 }}>Expires in: {remainingTime}</Text>
         ) : null}
-        {imageSource && (
-          <Image
-            source={{ uri: imageSource }}
-            style={{ width: 200, height: 200, marginTop: 10 }}
-          />
-        )}
       </View>
     </>
   );
