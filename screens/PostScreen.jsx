@@ -81,7 +81,7 @@ const PostScreen = ({ navigation }) => {
               <Text
                 style={{ color: "white", textAlign: "center", fontSize: 16 }}
               >
-                Pick Image
+                Pick an image
               </Text>
             </TouchableOpacity>
           </View>
@@ -120,7 +120,7 @@ const PostScreen = ({ navigation }) => {
               backgroundColor: "#e7e7e7",
               width: 300,
             }}
-            placeholder="Expiry Time"
+            placeholder="Expiry time (mins)"
             value={expiryTime}
             onChangeText={setExpiryTime}
           />
